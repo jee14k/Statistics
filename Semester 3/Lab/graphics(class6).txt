@@ -1,0 +1,91 @@
+> women
+   height weight
+1      58    115
+2      59    117
+3      60    120
+4      61    123
+5      62    126
+6      63    129
+7      64    132
+8      65    135
+9      66    139
+10     67    142
+11     68    146
+12     69    150
+13     70    154
+14     71    159
+15     72    164
+
+> plot(women)
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Function plot
+
+ x = seq(-2,2)
+> y = x^2
+> plot(x,y,type = "l" , xlab = "X axis" , ylab = "Y axis", main="Parabola",col="red")
+
+ x = seq(-2,2)
+> y = x^2
+> plot(x,y,type = "l" , xlab = "X axis" , ylab = "Y axis", main="Parabola",col="red")
+> sp = spline(x,y) #spline interpolation of data points
+> lines(sp,col="blue")
+> sp = spline(x,y,n=20)
+> #interpolation at n ponts spanning(xmin to xmax)
+> lines(sp,col="green")
+> 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Time series - line graph
+
+ v = c(7,12,28,3,41)
+> t = c(14,7,6,19,3)
+> plot(v,type="o" , col="blue" , xlab = "Month" , ylab = "Rainfall" , main = "Rainfall Chart")
+> lines(t,type = "o", col = "red")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ x = c(1:5)
+> y = x
+> par(pch =22, col ="blue") #pch length of the dot , plotting symbol and color
+> par(mfrow =c(2,4)) #all plots on one page
+> opts = c("p" , "l" ,"o" ,"b" ,"c" ,"s" ,"S" ,"h")
+> for(i in 1:length(opts))
++ {
++ heading = paste("type = ",opts[i])
++ plot(x,y,main = heading)
++ lines(x,y,type=opts[i])
++ }
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Scatter Plot
+
+attach(mtcars)
+> plot(wt, mpg, main = "Weight/MPG graph" , xlab = "Car Weight(lbs)" , ylab
++ ="Miles Per Gallon", pch = 19)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Kernel Density Plot    - normal , skewed ?
+
+> d=  density(mtcars$mpg) #kernel density estimates
+> plot(d)
+> #filled density plot
+> d = density(mtcars$mpg)
+> plot(d, main ="Kernal Density of Miles Per Gallon")
+> polygon(d, col = "red" , border ="blue")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
